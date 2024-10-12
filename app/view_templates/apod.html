@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Load common head content, including the favicon link -->
+    {% include "./partials/head.html" ignore missing with context %}
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>Apod</title>
+</head>
+<body>
+    <!-- include navbar from partials -->
+    {% include "./partials/nav.html" ignore missing with context %}
+    <h1>NASA Astronomy Picture of the Day - {{ currentDate }}</h1>
+    <img src="{{ data.url }}" alt="{{ data.title }}" class="img-fluid">
+    <p>{{ data.explanation }}</p>
+    <!-- Load common CSS and JS -->
+    {% include "./partials/dependencies.html" ignore missing with context %}
+</body>
+</html>
